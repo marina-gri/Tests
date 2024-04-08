@@ -17,18 +17,18 @@ def test_selenium_auth():
     driver.get('https://passport.yandex.ru/auth/')
     time.sleep(2)
 
-    email_input = driver.find_element("id", "passp-field-login")
+    email_input = driver.find_element(By.ID, "passp-field-login")
     email_input.clear()
     email_input.send_keys(email)
 
-    driver.find_element("id", "passp:sign-in").click()
+    driver.find_element(By.ID, "passp:sign-in").click()
     time.sleep(2)
 
-    password_input = driver.find_element("id", "passp-field-passwd")
+    password_input = driver.find_element(By.ID, "passp-field-passwd")
     password_input.clear()
     password_input.send_keys(password)
 
-    driver.find_element("id", "passp:sign-in").click()
+    driver.find_element(By.ID, "passp:sign-in").click()
     time.sleep(2)
 
     if "пуш" in driver.find_element(By.CSS_SELECTOR, "h1").text:
